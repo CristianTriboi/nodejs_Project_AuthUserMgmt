@@ -17,9 +17,10 @@ router.get("/",(req,res)=>{
 // GET by specific ID request: Retrieve a single friend with email ID
 router.get("/:email",(req,res)=>{
     let email = req.params.email;
+    let selectedEmail = "Not found"
 
     if (email in friends) {
-        let selectedEmail = friends[email];
+        selectedEmail = friends[email];
     }
   res.send(selectedEmail);
 });
